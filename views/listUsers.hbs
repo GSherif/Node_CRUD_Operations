@@ -1,0 +1,27 @@
+<h2>Users</h2>
+{{#if data}}
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {{#each data}}
+            <td>{{this.name}}</td>
+            <td>{{this.age}}</td>
+            <td>
+                <a href='/users/edit/{{@index}}'>Edit</a>
+            </td>
+            <td>
+                <a href='/users/delete/{{@index}}'>Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+        {{else}}
+        <p><em>There are currently no users</em></p>
+        {{/if}}
+    </tbody>
+</table>
